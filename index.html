@@ -1,3 +1,5 @@
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +29,11 @@
   a{color:inherit;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
   button{font-family:inherit;cursor:pointer;border:none;}
-
+ 
   .thali-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;
     background:conic-gradient(var(--gold) 0deg 90deg, var(--mid-green) 90deg 200deg, var(--light-green) 200deg 300deg, var(--gold) 300deg 360deg);
     border:1.5px solid var(--white); box-shadow:0 0 0 1.5px var(--dark-green);}
-
+ 
   header{position:sticky;top:0;z-index:60;background:var(--dark-green);color:var(--cream);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;}
@@ -41,15 +43,12 @@
   .nav-links a:hover{color:var(--gold);}
   .nav a.cta{background:var(--gold);color:var(--dark-green);padding:9px 18px;border-radius:2px;font-weight:600;font-size:.85rem;}
   @media(max-width:780px){.nav-links{display:none;}}
-
-  .hero{background:
-    linear-gradient(rgba(18,53,36,0.75), rgba(18,53,36,0.75)),
-    url("1783434230570.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--cream);
-  padding: 60px 24px 80px;}
+ 
+  .hero{background:linear-gradient(180deg,var(--dark-green),var(--mid-green));color:var(--cream);padding:60px 24px 80px;position:relative;overflow:hidden;}
+  .tcs-watermark{position:absolute;white-space:nowrap;font-family:'Fraunces',serif;font-weight:700;color:rgba(255,255,255,.06);pointer-events:none;user-select:none;z-index:0;}
+  .tcs-watermark.top{top:18px;left:-40px;font-size:4.2rem;transform:rotate(-4deg);}
+  .tcs-watermark.bottom{bottom:6px;right:-30px;font-size:3.4rem;transform:rotate(-3deg);color:rgba(255,255,255,.05);}
+  .hero .hero-grid{position:relative;z-index:1;}
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;gap:10px;align-items:center;margin-bottom:16px;}
   .hero h1{color:var(--white);font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:600;line-height:1.1;max-width:760px;}
   .hero h1 em{font-style:italic;color:var(--gold);}
@@ -58,13 +57,16 @@
   .btn{padding:13px 24px;border-radius:2px;font-weight:600;font-size:.92rem;display:inline-flex;align-items:center;gap:8px;}
   .btn-gold{background:var(--gold);color:var(--dark-green);}
   .btn-outline{border:1px solid rgba(255,255,255,.4);color:var(--white);background:transparent;}
-
+ 
   section{padding:70px 24px;}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:10px;}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:10px;}
+  .big-icon-badge{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    border:5px solid var(--white);box-shadow:0 12px 30px rgba(0,0,0,.18);transform:rotate(-6deg);}
+  .sec-head.big{gap:22px;margin-bottom:6px;}
   .sec-head h2{font-size:clamp(1.6rem,2.6vw,2.1rem);}
   .sec-head .num{font-family:'IBM Plex Mono',monospace;color:var(--gold-deep);font-size:.9rem;}
   .sec-sub{max-width:600px;color:var(--muted);margin-bottom:36px;}
-
+ 
   .thali-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .thali-card{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;}
   .thali-photo{width:100%;height:170px;object-fit:cover;border-radius:3px;margin-bottom:14px;display:block;}
@@ -84,9 +86,17 @@
   .qty-row input{width:70px;padding:8px;border:1px solid var(--line);border-radius:2px;font-family:'IBM Plex Mono',monospace;}
   .add-btn{background:var(--dark-green);color:var(--cream);padding:10px;border-radius:2px;font-weight:600;font-size:.85rem;width:100%;}
   .add-btn.added{background:var(--light-green);}
-
-  .menu-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
-  .tab-btn{background:var(--white);border:1px solid var(--line);padding:9px 16px;border-radius:20px;font-size:.85rem;color:var(--muted);}
+ 
+  .cat-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;}
+  .cat-tile{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;font-family:inherit;}
+  .cat-tile.active{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset;background:#FFFDF6;}
+  .cat-tile-icon{width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,.15);}
+  .cat-tile h3{font-size:.95rem;}
+  .cat-tile-note{font-size:.7rem;color:var(--gold-deep);font-family:'IBM Plex Mono',monospace;}
+  @media(max-width:860px){.cat-tiles{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.cat-tiles{grid-template-columns:1fr;}}
+  .tab-btn{background:var(--white);border:1px solid var(--line);padding:6px 16px 6px 6px;border-radius:20px;font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:8px;}
+  .tab-btn .tab-icon{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;}
   .tab-btn.active{background:var(--dark-green);color:var(--cream);border-color:var(--dark-green);}
   .item-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
   .item-row{background:var(--white);border:1px solid var(--line);border-radius:2px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
@@ -96,7 +106,7 @@
   .item-row .qty{width:56px;padding:6px;border:1px solid var(--line);border-radius:2px;font-family:'IBM Plex Mono',monospace;display:none;}
   .item-row.checked .qty{display:block;}
   @media(max-width:640px){.item-grid{grid-template-columns:1fr;}}
-
+ 
   .rules{background:var(--dark-green);color:var(--cream);}
   .rules .sec-head h2{color:var(--cream);}
   .rules .sec-sub{color:#B9C7B7;}
@@ -106,7 +116,7 @@
   .rule h3{color:var(--cream);font-size:1.05rem;margin:8px 0;}
   .rule p{color:#B9C7B7;font-size:.87rem;margin:0;}
   @media(max-width:780px){.rule-grid{grid-template-columns:1fr;}.thali-row{grid-template-columns:1fr;}}
-
+ 
   .order-panel{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:28px;}
   .cart-list{list-style:none;margin:0 0 20px;padding:0;}
   .cart-list li{display:flex;justify-content:space-between;font-size:.9rem;padding:8px 0;border-bottom:1px solid var(--line);}
@@ -119,7 +129,7 @@
   #validation-msg{font-size:.85rem;color:#B03A2E;margin-top:10px;display:none;}
   .submit-btn{background:var(--gold);color:var(--dark-green);padding:15px;border-radius:2px;font-weight:700;font-size:1rem;width:100%;margin-top:6px;}
   @media(max-width:640px){.field-row{grid-template-columns:1fr;}}
-
+ 
   /* ===== HERO v2 ===== */
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
   .hero h1.brandtitle{color:var(--white);font-size:clamp(2.4rem,6vw,4rem);font-weight:700;line-height:1;letter-spacing:-.01em;}
@@ -140,7 +150,7 @@
   .big-thali-label span{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:var(--gold);margin-top:8px;}
   .seal{position:absolute;top:-8px;right:6px;width:104px;height:104px;border-radius:50%;background:var(--gold);color:var(--dark-green);display:flex;align-items:center;justify-content:center;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.6rem;font-weight:700;line-height:1.35;padding:8px;border:3px dashed var(--dark-green);transform:rotate(10deg);}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr;}.hero-visual{margin-top:20px;}}
-
+ 
   /* ===== ABOUT STRIP (About Us / Why Choose / Call Now) ===== */
   .about-strip{background:var(--cream);border-top:1px solid var(--line);}
   .about-strip-grid{display:grid;grid-template-columns:1.1fr 1.2fr .9fr;gap:40px;align-items:start;}
@@ -156,9 +166,10 @@
   .call-col .btn-gold{width:100%;justify-content:center;box-sizing:border-box;}
   .call-col .hours{font-size:.8rem;color:#B9C7B7;margin-top:14px;}
   @media(max-width:900px){.about-strip-grid{grid-template-columns:1fr;}}
-
+ 
   /* ===== FOOTER v2 ===== */
-  footer{background:var(--dark-green);color:#B9C7B7;padding-top:56px;font-size:.85rem;}
+  footer{background:var(--dark-green);color:#B9C7B7;padding-top:56px;font-size:.85rem;position:relative;overflow:hidden;}
+  footer .wrap.foot-grid, footer .foot-bottom{position:relative;z-index:1;}
   footer .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr 1.2fr;gap:32px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1);}
   footer h4{color:var(--cream);font-family:'Fraunces',serif;font-size:1rem;margin-bottom:14px;}
   footer .foot-brand strong{color:var(--gold);font-family:'Fraunces',serif;font-size:1.1rem;display:block;margin-bottom:6px;}
@@ -171,7 +182,23 @@
   .pay-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:4px;font-size:.72rem;font-family:'IBM Plex Mono',monospace;color:var(--cream);}
   .foot-bottom{text-align:center;padding:20px 24px;font-size:.78rem;color:#7E9483;}
   .foot-bottom span{color:var(--gold);}
-  .occasions{background:var(--cream);}
+  .feedback{background:#F1EEE0;}
+  .feedback-panel{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:32px;max-width:640px;margin:0 auto;}
+  .star-rating{display:flex;flex-direction:row-reverse;justify-content:center;gap:6px;margin-bottom:20px;}
+  .star-rating input{display:none;}
+  .star-rating label{font-size:2rem;color:var(--line);cursor:pointer;transition:color .15s;}
+  .star-rating input:checked ~ label,
+  .star-rating label:hover,
+  .star-rating label:hover ~ label{color:var(--gold);}
+  #feedback-msg{font-size:.85rem;color:var(--mid-green);margin-top:10px;display:none;text-align:center;}
+  .feedback-list{max-width:800px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .fb-card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:20px;}
+  .fb-card .fb-stars{color:var(--gold);font-size:1rem;margin-bottom:8px;}
+  .fb-card .fb-name{font-family:'Fraunces',serif;font-weight:600;color:var(--dark-green);font-size:.95rem;}
+  .fb-card .fb-msg{font-size:.87rem;color:var(--muted);margin-top:6px;}
+  .fb-card .fb-date{font-size:.7rem;color:var(--line);margin-top:8px;font-family:'IBM Plex Mono',monospace;}
+  .fb-loading{text-align:center;color:var(--muted);font-size:.9rem;grid-column:1/-1;}
+  @media(max-width:640px){.feedback-list{grid-template-columns:1fr;}}
   .occ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
   .occ-card{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:24px;}
   .occ-card .icon{font-size:1.6rem;margin-bottom:10px;}
@@ -182,26 +209,28 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div class="nav wrap">
     <div class="brand"><img src="logo.jpg" alt="5 Ratan Enterprises Food logo" class="logo-img">5 Ratan <span>Enterprises</span></div>
     <div class="nav-links">
-      <a href="#thali">Thali</a><a href="#custom">Custom Menu</a><a href="#occasions">Festivals &amp; Functions</a><a href="#rules">Order Rules</a><a href="#about">About Us</a><a href="#order">Order Now</a>
+      <a href="#thali">Thali</a><a href="#custom">🍽️ Custom Menu</a><a href="#occasions">Festivals &amp; Functions</a><a href="#rules">Order Rules</a><a href="#about">About Us</a><a href="#feedback">Feedback</a><a href="#order">Order Now</a>
     </div>
     <a class="cta" href="#order">Order Now</a>
   </div>
 </header>
-
+ 
 <section class="hero">
+  <div class="tcs-watermark top">WORKING WITH TCS</div>
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow"><div class="thali-dot"></div>100% Pure Vegetarian</div>
+      <div class="eyebrow"><svg class="veg-mark" viewBox="0 0 100 100" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="92" height="92" rx="6" fill="#fff" stroke="#1a7a34" stroke-width="9"/><circle cx="50" cy="50" r="27" fill="#1a7a34"/></svg>100% Pure Vegetarian</div>
+      <img src="logo.jpg" alt="5 Ratan Enterprises Food logo" style="width:100px;height:100px;object-fit:cover;border-radius:50%;margin-bottom:14px;display:block;box-shadow:0 10px 24px rgba(0,0,0,.3);">
       <h1 class="brandtitle">5 RATAN<em>ENTERPRISES</em></h1>
       <p class="tagline">Pure &bull; Fresh &bull; Delicious</p>
       <p>Offices, weddings aur family functions ke liye bulk pure-veg catering — apni thali chunein ya khud ka menu banayein.</p>
       <div class="feature-badges">
-        <div class="fbadge">🌿 <span>100% Pure Veg</span></div>
+        <div class="fbadge"><svg viewBox="0 0 100 100" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="92" height="92" rx="8" fill="#fff" stroke="#1a7a34" stroke-width="10"/><circle cx="50" cy="50" r="26" fill="#1a7a34"/></svg> <span>100% Pure Veg</span></div>
         <div class="fbadge">🧼 <span>Fresh &amp; Hygienic</span></div>
         <div class="fbadge">🏢 <span>Corporate Catering</span></div>
         <div class="fbadge">🎉 <span>Event &amp; Party Ready</span></div>
@@ -209,6 +238,7 @@
       <div class="hero-ctas">
         <a class="btn btn-gold" href="https://wa.me/917903439518" target="_blank" rel="noopener">Order on WhatsApp</a>
         <a class="btn btn-outline" href="tel:+917903439518">📞 79034 39518</a>
+        <a class="btn btn-outline" href="tel:+919455460899">📞 94554 60899</a>
       </div>
       <div class="hero-address">📍 Shiv Ganga Colony, Ramna, Varanasi, Uttar Pradesh</div>
     </div>
@@ -218,13 +248,13 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="thali">
   <div class="wrap">
     <div class="sec-head"><span class="num mono">01</span><h2>Thali System</h2></div>
     <p class="sec-sub">Teen ready-made thali options — sabka minimum order 15 plates hai.</p>
     <div class="thali-row">
-
+ 
       <div class="thali-card" data-thali="Simple Thali">
         <div class="thali-photo-wrap">
           <img src="thali-simple.jpg" alt="Simple Thali" class="thali-photo">
@@ -237,7 +267,7 @@
         <div class="qty-row"><input type="number" class="thali-qty" min="15" value="15"><span class="mono" style="font-size:.8rem;color:var(--muted);">plates</span></div>
         <button class="add-btn" onclick="addThali(this,'Simple Thali')">Add to Order</button>
       </div>
-
+ 
       <div class="thali-card" data-thali="Super Thali">
         <div class="thali-photo-wrap">
           <img src="thali-medium.jpg" alt="Super Thali" class="thali-photo">
@@ -250,7 +280,7 @@
         <div class="qty-row"><input type="number" class="thali-qty" min="15" value="15"><span class="mono" style="font-size:.8rem;color:var(--muted);">plates</span></div>
         <button class="add-btn" onclick="addThali(this,'Super Thali')">Add to Order</button>
       </div>
-
+ 
       <div class="thali-card" data-thali="Deluxe Thali">
         <div class="thali-photo-wrap">
           <img src="thali-hero.jpg" alt="Deluxe Thali" class="thali-photo">
@@ -263,27 +293,45 @@
         <div class="qty-row"><input type="number" class="thali-qty" min="15" value="15"><span class="mono" style="font-size:.8rem;color:var(--muted);">plates</span></div>
         <button class="add-btn" onclick="addThali(this,'Deluxe Thali')">Add to Order</button>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <section id="custom" style="background:#F1EEE0;">
   <div class="wrap">
-    <div class="sec-head"><span class="num mono">02</span><h2>Custom Menu Builder</h2></div>
-    <p class="sec-sub">Apni pasand ke items chunein. Har item ka minimum order 15 plates hai.</p>
-    <div class="menu-tabs">
-      <button class="tab-btn active" onclick="showTab('snacks',this)">Snacks &amp; Breakfast</button>
-      <button class="tab-btn" onclick="showTab('parantha',this)">Parantha</button>
-      <button class="tab-btn" onclick="showTab('main',this)">Main Course</button>
+    <div class="sec-head"><img src="icon-snacks.jpg" class="section-icon-img" alt="Custom Menu icon"><h2>Custom Menu Builder</h2></div>
+    <p class="sec-sub">Apni pasand ke items chunein. Har category ka minimum order 15 plates hai.</p>
+    <div class="cat-tiles">
+      <button class="cat-tile active" onclick="showTab('snacks',this)">
+        <img src="icon-snacks.jpg" class="cat-tile-icon">
+        <h3>Snacks &amp; Breakfast</h3>
+        <span class="cat-tile-note">Minimum Order: 15 Plates</span>
+      </button>
+      <button class="cat-tile" onclick="showTab('parantha',this)">
+        <img src="icon-parantha.jpg" class="cat-tile-icon">
+        <h3>Parantha</h3>
+        <span class="cat-tile-note">Minimum Order: 15 Plates</span>
+      </button>
+      <button class="cat-tile" onclick="showTab('main',this)">
+        <img src="icon-main.jpg" class="cat-tile-icon">
+        <h3>Main Course</h3>
+        <span class="cat-tile-note">Minimum Order: 15 Plates</span>
+      </button>
+      <button class="cat-tile" onclick="showTab('juice',this)">
+        <img src="icon-juice.jpg" class="cat-tile-icon">
+        <h3>Juices &amp; Beverages</h3>
+        <span class="cat-tile-note">Minimum Order: 15 Plates</span>
+      </button>
     </div>
-
+ 
     <div class="item-grid" id="tab-snacks"></div>
     <div class="item-grid" id="tab-parantha" style="display:none;"></div>
     <div class="item-grid" id="tab-main" style="display:none;"></div>
+    <div class="item-grid" id="tab-juice" style="display:none;"></div>
   </div>
 </section>
-
+ 
 <section id="rules" class="rules">
   <div class="wrap">
     <div class="sec-head"><span class="num mono">03</span><h2>Order Rules</h2></div>
@@ -298,10 +346,10 @@
     <div class="rule"><span class="mono">CATERING FOR</span><h3>Corporate &amp; Events</h3><p>Office lunch, meetings, weddings, birthdays, anniversary, ghar ke function.</p></div>
   </div>
 </section>
-
+ 
 <section id="occasions" class="occasions">
   <div class="wrap">
-    <div class="sec-head"><span class="num mono">04</span><h2>Festivals &amp; Functions</h2></div>
+    <div class="sec-head big"><img src="icon-occasions.jpg" class="big-icon-badge" alt="Occasions icon"><h2>Festivals &amp; Functions</h2></div>
     <p class="sec-sub">Ek hi kitchen se — chhoti family puja se lekar bade corporate order tak, har occasion cover karte hain.</p>
     <div class="occ-grid">
       <div class="occ-card"><div class="icon">💒</div><h3>Wedding Catering</h3><p>Shaadi, sangeet, reception — bulk thali service, live counters possible.</p></div>
@@ -313,15 +361,15 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="order" style="background:var(--cream);">
   <div class="wrap">
     <div class="sec-head"><span class="num mono">04</span><h2>Your Order</h2></div>
     <p class="sec-sub">Order submit karte hi ek ready quotation-request WhatsApp par khulega.</p>
-
+ 
     <div class="order-panel">
       <ul class="cart-list" id="cart-list"><li class="cart-empty">Abhi tak koi item add nahi kiya &mdash; thali select karein ya custom menu se items chunein.</li></ul>
-
+ 
       <div class="field"><label>Your Name</label><input type="text" id="cust-name" placeholder="e.g. Rahul Singh"></div>
       <div class="field-row">
         <div class="field"><label>Phone Number</label><input type="tel" id="cust-phone" placeholder="10-digit mobile"></div>
@@ -333,12 +381,12 @@
       </div>
       <div id="delivery-note">Minimum 12 hours advance booking required. Orders after 7 PM are processed from the next business day.</div>
       <div id="validation-msg"></div>
-
+ 
       <button class="submit-btn" onclick="submitOrder()">Send Order Request on WhatsApp</button>
     </div>
   </div>
 </section>
-
+ 
 <section class="about-strip" id="about">
   <div class="wrap about-strip-grid">
     <div class="about-col">
@@ -348,7 +396,7 @@
     <div class="why-col">
       <h3>Why Choose Us?</h3>
       <div class="why-icons">
-        <div class="why-item"><div class="circ">🌿</div><span>100% Pure Veg</span></div>
+        <div class="why-item"><div class="circ"><svg viewBox="0 0 100 100" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="92" height="92" rx="10" fill="#fff" stroke="#1a7a34" stroke-width="9"/><circle cx="50" cy="50" r="27" fill="#1a7a34"/></svg></div><span>100% Pure Veg</span></div>
         <div class="why-item"><div class="circ">🧼</div><span>Fresh &amp; Hygienic</span></div>
         <div class="why-item"><div class="circ">🍽️</div><span>Custom Menu</span></div>
         <div class="why-item"><div class="circ">⏱️</div><span>12-Hr Booking</span></div>
@@ -359,17 +407,44 @@
     <div class="call-col">
       <h3>Call Us Now</h3>
       <a class="phone" href="tel:+917903439518">+91 79034 39518</a>
+      <a class="phone" href="tel:+919455460899" style="font-size:1.15rem;margin-top:-8px;">+91 94554 60899</a>
       <a class="btn btn-gold" href="https://wa.me/917903439518" target="_blank" rel="noopener">Order on WhatsApp</a>
       <div class="hours">We are available<br>9:00 AM – 7:00 PM, daily</div>
     </div>
   </div>
 </section>
-
+ 
+<section class="feedback" id="feedback">
+  <div class="wrap">
+    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;">
+      <h2>Customer Feedback</h2>
+    </div>
+    <p class="sec-sub" style="text-align:center;margin-left:auto;margin-right:auto;">Aapka anubhav hamare liye zaroori hai — rating aur feedback submit karein, sabko turant is site par dikhega.</p>
+ 
+    <div class="feedback-panel">
+      <div class="star-rating">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+        <input type="radio" id="star3" name="rating" value="3" checked><label for="star3">★</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+      </div>
+      <div class="field"><label>Your Name</label><input type="text" id="fb-name" placeholder="e.g. Priya Sharma"></div>
+      <div class="field"><label>Your Feedback</label><textarea id="fb-message" rows="4" placeholder="Khana kaisa laga, service kaisi rahi..."></textarea></div>
+      <div id="feedback-msg"></div>
+      <button class="submit-btn" onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+ 
+    <div id="feedback-list" class="feedback-list"></div>
+  </div>
+</section>
+ 
 <footer>
+  <div class="tcs-watermark bottom">WORKING WITH TCS</div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <strong>5 Ratan Enterprises Food</strong>
-      100% Pure Vegetarian Catering
+      <svg viewBox="0 0 100 100" width="16" height="16" xmlns="http://www.w3.org/2000/svg" style="vertical-align:-3px;margin-right:5px;"><rect x="4" y="4" width="92" height="92" rx="8" fill="#fff" stroke="#1a7a34" stroke-width="10"/><circle cx="50" cy="50" r="26" fill="#1a7a34"/></svg>100% Pure Vegetarian Catering
       <div class="socials">
         <a href="https://wa.me/917903439518" target="_blank" rel="noopener">💬</a>
         <a href="tel:+917903439518">📞</a>
@@ -389,7 +464,8 @@
     <div>
       <h4>Our Location</h4>
       <p style="margin:0 0 8px;">📍 Shiv Ganga Colony,<br>Ramna, Varanasi, Uttar Pradesh</p>
-      <p style="margin:0;">📧 at3433984@gmail.com</p>
+      <p style="margin:0 0 4px;">📧 panchratanent@gmail.com</p>
+      <p style="margin:0;">📞 79034 39518 &middot; 94554 60899</p>
     </div>
     <div>
       <h4>Payment Options</h4>
@@ -406,18 +482,21 @@
     5 Ratan Enterprises Food &middot; Shiv Ganga Colony, Ramna, Varanasi &middot; <span>Pure Vegetarian</span>
   </div>
 </footer>
-
+ 
 <script>
 const PHONE = "917903439518";
-
+const SUPABASE_URL = "https://qpnujfqtygkexvkicfkw.supabase.co";
+const SUPABASE_KEY = "sb_publishable_nUR5Kh_ZWmU1kLp3RJHJUA_2HUTarGf";
+ 
 const MENU = {
   snacks: ["Veg Sandwich","Plain Dosa","Masala Dosa","Chilly Potato","Veg Fried Rice","Chilly Paneer","Corn Pepper Salted","Samosa","Cholla Samosa","Macroni Veg","Veg Noodles","Veg Burger","Vada Sambhar","Idli Sambhar","Corn Flakes Milk","Poori Aloo Matar","Poha Vegetable","Pav Bhaji","Veg Cutlet","Cheese Toast","Potato Toast","Brown Bread Butter","Bread Butter","Bread Pakora","Cheese Cutlet","Plain Maggi","Veg Maggi"],
-  parantha: ["Potato Parantha","Onion Parantha","Mix Parantha","Gobhi Parantha","Paneer Onion Parantha"],
-  main: ["Paneer Butter Masala","Kadai Paneer","Shahi Paneer","Paneer Lababdar","Handi Paneer","Malai Kofta","Methi Malai Paneer","Mushroom Curry","Paneer Bhurji","Jeera Aloo","Aloo Matar","Mixed Veg","Seasonal Veg","Dal Makhani","Arhar Dal","Chhole","Rajma","Tawa Roti","Plain Paratha","Lachha Paratha","Plain Rice","Jeera Rice","Veg Biryani"]
+  parantha: ["Potato Parantha","Onion Parantha","Mix Parantha","Gobhi Parantha","Paneer Onion Parantha","Satu Parantha"],
+  main: ["Paneer Butter Masala","Kadai Paneer","Shahi Paneer","Paneer Lababdar","Handi Paneer","Malai Kofta","Methi Malai Paneer","Mushroom Curry","Paneer Bhurji","Jeera Aloo","Aloo Matar","Mixed Veg","Seasonal Veg","Dal Makhani","Arhar Dal","Chhole","Rajma","Tawa Roti","Plain Paratha","Lachha Paratha","Plain Rice","Jeera Rice","Veg Biryani"],
+  juice: ["Orange Juice","Mango Juice","Pineapple Juice","Watermelon Juice","Mixed Fruit Juice","Sweet Lime (Mosambi) Juice","Pomegranate Juice","Lemon Mint Juice","Sugarcane Juice","Fresh Coconut Water"]
 };
-
+ 
 let cart = [];
-
+ 
 function buildMenu(){
   Object.keys(MENU).forEach(cat=>{
     const container = document.getElementById('tab-'+cat);
@@ -431,15 +510,15 @@ function buildMenu(){
     }).join('');
   });
 }
-
+ 
 function showTab(cat, btn){
-  ['snacks','parantha','main'].forEach(c=>{
+  ['snacks','parantha','main','juice'].forEach(c=>{
     document.getElementById('tab-'+c).style.display = (c===cat)?'grid':'none';
   });
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.cat-tile').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
 }
-
+ 
 function toggleItem(id, name, checkbox){
   const row = document.getElementById('row-'+id);
   if(checkbox.checked){
@@ -452,14 +531,14 @@ function toggleItem(id, name, checkbox){
   }
   renderCart();
 }
-
+ 
 function updateQty(name, val){
   const q = Math.max(parseInt(val)||15, 15);
   const item = cart.find(c=>c.name===name);
   if(item) item.qty = q;
   renderCart();
 }
-
+ 
 function addThali(btn, thaliName){
   const card = btn.closest('.thali-card');
   const qtyInput = card.querySelector('.thali-qty');
@@ -472,7 +551,7 @@ function addThali(btn, thaliName){
   btn.classList.add('added');
   renderCart();
 }
-
+ 
 function renderCart(){
   const list = document.getElementById('cart-list');
   if(cart.length===0){
@@ -481,7 +560,7 @@ function renderCart(){
   }
   list.innerHTML = cart.map(c=>'<li><span>'+c.name+'</span><span class="mono">'+c.qty+' plates</span></li>').join('');
 }
-
+ 
 function getMinDeliveryDate(){
   const now = new Date();
   let base = new Date(now);
@@ -491,11 +570,11 @@ function getMinDeliveryDate(){
   }
   return new Date(base.getTime() + 12*60*60*1000);
 }
-
+ 
 function submitOrder(){
   const msg = document.getElementById('validation-msg');
   msg.style.display = 'none';
-
+ 
   if(cart.length===0){
     msg.textContent = "Kripya kam se kam ek thali ya menu item select karein.";
     msg.style.display='block'; return;
@@ -505,34 +584,103 @@ function submitOrder(){
   const location = document.getElementById('cust-location').value.trim();
   const date = document.getElementById('delivery-date').value;
   const time = document.getElementById('delivery-time').value;
-
+ 
   if(!name || !phone || !location || !date || !time){
     msg.textContent = "Kripya sabhi fields bharein: naam, phone, location, delivery date aur time.";
     msg.style.display='block'; return;
   }
-
+ 
   const deliveryDateTime = new Date(date+'T'+time);
   const minAllowed = getMinDeliveryDate();
-
+ 
   if(deliveryDateTime < minAllowed){
     msg.textContent = "Delivery kam se kam " + minAllowed.toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'}) + " ke baad hi select karein (12-hour advance booking rule).";
     msg.style.display='block'; return;
   }
-
+ 
   const itemLines = cart.map(c=>c.name + " \u2013 " + c.qty + " Plate").join('\n');
   const dateStr = deliveryDateTime.toLocaleDateString('en-IN',{day:'2-digit',month:'long'});
   const timeStr = deliveryDateTime.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
-
+ 
   const text = "Customer Name: " + name + "\nPhone: " + phone + "\nItems:\n" + itemLines +
     "\nDelivery Date: " + dateStr + "\nDelivery Time: " + timeStr +
     "\nLocation: " + location + "\nPlease Send Final Quotation";
-
+ 
   const url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text);
   window.open(url, '_blank');
 }
-
+ 
+async function submitFeedback(){
+  const box = document.getElementById('feedback-msg');
+  const name = document.getElementById('fb-name').value.trim();
+  const message = document.getElementById('fb-message').value.trim();
+  const rating = document.querySelector('input[name="rating"]:checked').value;
+ 
+  if(!name || !message){
+    box.style.color = '#B03A2E';
+    box.textContent = "Kripya apna naam aur feedback likhein.";
+    box.style.display = 'block';
+    return;
+  }
+ 
+  try{
+    const res = await fetch(SUPABASE_URL + "/rest/v1/feedback", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_KEY,
+        "Authorization": "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({ name: name, rating: parseInt(rating), message: message })
+    });
+ 
+    if(!res.ok){ throw new Error("Save failed"); }
+ 
+    box.style.color = 'var(--mid-green)';
+    box.textContent = "Dhanyavaad! Aapka feedback save ho gaya.";
+    box.style.display = 'block';
+    document.getElementById('fb-name').value = '';
+    document.getElementById('fb-message').value = '';
+    loadFeedback();
+  } catch(err){
+    box.style.color = '#B03A2E';
+    box.textContent = "Kuch gadbad ho gayi, thodi der baad phir try karein.";
+    box.style.display = 'block';
+  }
+}
+ 
+async function loadFeedback(){
+  const list = document.getElementById('feedback-list');
+  list.innerHTML = '<div class="fb-loading">Loading feedback...</div>';
+  try{
+    const res = await fetch(SUPABASE_URL + "/rest/v1/feedback?select=*&order=created_at.desc&limit=20", {
+      headers: {
+        "apikey": SUPABASE_KEY,
+        "Authorization": "Bearer " + SUPABASE_KEY
+      }
+    });
+    const data = await res.json();
+    if(!Array.isArray(data) || data.length===0){
+      list.innerHTML = '<div class="fb-loading">Abhi tak koi feedback nahi hai — pehla feedback aap de sakte hain!</div>';
+      return;
+    }
+    list.innerHTML = data.map(f=>{
+      const stars = "\u2605".repeat(f.rating) + "\u2606".repeat(5-f.rating);
+      const date = new Date(f.created_at).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+      const safeName = (f.name||'').replace(/</g,'&lt;');
+      const safeMsg = (f.message||'').replace(/</g,'&lt;');
+      return '<div class="fb-card"><div class="fb-stars">'+stars+'</div><div class="fb-name">'+safeName+'</div><div class="fb-msg">'+safeMsg+'</div><div class="fb-date">'+date+'</div></div>';
+    }).join('');
+  } catch(err){
+    list.innerHTML = '<div class="fb-loading">Feedback load nahi ho paya, page refresh karke dekhein.</div>';
+  }
+}
+ 
 buildMenu();
+loadFeedback();
 </script>
-
+ 
 </body>
 </html>
+ 
