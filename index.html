@@ -33,14 +33,14 @@
     border:1.5px solid var(--white); box-shadow:0 0 0 1.5px var(--dark-green);}
 
   header{position:sticky;top:0;z-index:60;background:var(--dark-green);color:var(--cream);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(12px,3vw,24px);gap:12px;flex-wrap:nowrap;}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;white-space:nowrap;flex-shrink:0;}
   .logo-img{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--cream);}
   .brand span{color:var(--gold);}
-  .nav-links{display:flex;gap:22px;font-size:.9rem;}
+  .nav-links{display:flex;gap:clamp(6px,1.6vw,22px);font-size:clamp(.62rem,1.35vw,.9rem);flex-wrap:nowrap;white-space:nowrap;}
   .nav-links a:hover{color:var(--gold);}
-  .nav a.cta{background:var(--gold);color:var(--dark-green);padding:9px 18px;border-radius:2px;font-weight:600;font-size:.85rem;}
-  @media(max-width:1180px){.nav-links{display:none;}}
+  .nav a.cta{background:var(--gold);color:var(--dark-green);padding:clamp(6px,1.2vw,9px) clamp(10px,2vw,18px);border-radius:2px;font-weight:600;font-size:clamp(.68rem,1.3vw,.85rem);white-space:nowrap;flex-shrink:0;}
+  @media(max-width:620px){.nav-links{display:none;}}
 
   .hero{
     background:
