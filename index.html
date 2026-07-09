@@ -42,7 +42,13 @@
   .nav a.cta{background:var(--gold);color:var(--dark-green);padding:9px 18px;border-radius:2px;font-weight:600;font-size:.85rem;}
   @media(max-width:780px){.nav-links{display:none;}}
 
-  .hero{background:linear-gradient(180deg,var(--dark-green),var(--mid-green));color:var(--cream);padding:60px 24px 80px;position:relative;overflow:hidden;}
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(18,53,36,.92), rgba(30,92,61,.90)),
+      url('1783434230570.png') center center / cover no-repeat;
+    color:var(--cream);padding:60px 24px 80px;position:relative;overflow:hidden;}
+  .gst-corner{position:absolute;top:14px;right:20px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#B9C7B7;text-align:right;line-height:1.5;z-index:2;}
+  @media(max-width:640px){.gst-corner{position:static;text-align:left;margin-top:14px;}}
   .tcs-watermark{position:absolute;white-space:nowrap;font-family:'Fraunces',serif;font-weight:700;pointer-events:none;user-select:none;z-index:0;
     background:linear-gradient(90deg,var(--gold),var(--light-green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:.16;}
   .tcs-watermark.top{top:14px;left:-20px;font-size:2.4rem;transform:rotate(-4deg);}
@@ -220,6 +226,7 @@
 </header>
 
 <section class="hero">
+  <div class="gst-corner">GST: 09KMTPK4087CIZE<br>FSSAI: 20260112108179766</div>
   <div class="tcs-watermark top">WORKING WITH TCS</div>
   <div class="wrap hero-grid">
     <div>
@@ -242,7 +249,7 @@
       <div class="hero-address">📍 Shiv Ganga Colony, Ramna, Varanasi, Uttar Pradesh</div>
     </div>
     <div class="hero-visual">
-      <img src="1783434230570.png" alt="5 Ratan Enterprises veg thali" class="hero-photo">
+      <img src="hero-food.jpg" alt="5 Ratan Enterprises food spread" class="hero-photo">
       <img src="logo.jpg" alt="5 Ratan Enterprises Food logo" class="hero-logo-badge">
     </div>
   </div>
@@ -256,7 +263,7 @@
 
       <div class="thali-card" data-thali="Simple Thali">
         <div class="thali-photo-wrap">
-          <img src="thali-simple.jpg" alt="Simple Thali" class="thali-photo">
+          <img src="thali-simple_1.jpg" alt="Simple Thali" class="thali-photo">
           <div class="thali-photo-caption">Dal &middot; Seasonal Veg &middot; Rice &middot; 4 Chapati &middot; Salad &middot; Pickle</div>
         </div>
         <span class="tag">Everyday</span>
@@ -282,7 +289,7 @@
 
       <div class="thali-card" data-thali="Deluxe Thali">
         <div class="thali-photo-wrap">
-          <img src="deluxe-thali.jpg" alt="Deluxe Thali" class="thali-photo">
+          <img src="deluxe-thali_1.jpg" alt="Deluxe Thali" class="thali-photo">
           <div class="thali-photo-caption">Dal &middot; Paneer &middot; Veg &middot; Rice &middot; Raita &middot; Sweet &middot; Salad &middot; Papad &middot; 4 Chapati</div>
         </div>
         <span class="tag">Premium</span>
